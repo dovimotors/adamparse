@@ -5,6 +5,7 @@ from dbftopandas import AdamImport
 # Create your views here.
 def index(request):
     ai = AdamImport()
-    inv = ai.convert('C:\\adamparse\INVEN.DBF')
+    inv = ai.convert('C:\\apps\\adamparse\INVEN.DBF')
     s = inv.head()
-    return HttpResponse(s)
+    s_trunk = s.to_html()
+    return HttpResponse(s_trunk)
