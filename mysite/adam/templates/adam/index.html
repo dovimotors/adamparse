@@ -1,0 +1,13 @@
+{% if path_list %}
+    <ul>
+        {% for DBFPath in path_list %}
+        <li>
+            <a href="/adam/{{ id }}/">
+                {{ DBFPath }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Files Available.</p>
+{% endif %}
