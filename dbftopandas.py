@@ -3,7 +3,7 @@ import csv
 import pandas as pd
 import numpy as np
 
-db = dbf.Dbf('journals.104.dbf')
+db = dbf.Dbf('deal.dbf')
 fpath = 'output.csv'
 f = open(fpath,'w')
 hdr = []
@@ -20,7 +20,7 @@ for rec in db:
 
 from_csv = pd.read_csv(fpath)
 
-print from_csv.info()
+print from_csv.head()
 
 
 
