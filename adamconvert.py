@@ -2,7 +2,7 @@ from dbftopandas import AdamImport
 
 ai = AdamImport()
 
-i = 'c:\winADAM\Incar\Data\INVEN.DBF'
+i = 'c:\winADAM\Sicar\Data\\arcrof.dbf'
 o = 'c:\\apps\output.csv'
 t = 'csv'
 

@@ -22,6 +22,7 @@ def detail(request, path_id):
 
     #*******************
     # modify the dataframe here before converting to HTML
+    #be careful not to return too many rows or the http req will time out
     #*******************
 
     s = datafr.head()
