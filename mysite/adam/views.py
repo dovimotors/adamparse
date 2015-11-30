@@ -11,8 +11,8 @@ def index(request):
 
 def detail(request, path_id):
     ai = AdamImport()
-    #p = ADAMFiles.objects.filter(id=path_id)
-    p = 'c:\\winADAM\\accar\\Data\\journals.104.dbf'
+    p = ADAMFiles.objects.get(id=path_id)
+    p = str(p)
     inv = ai.convert(p)
     s = inv.head()
     s_trunk = s.to_html()
