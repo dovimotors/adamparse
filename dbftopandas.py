@@ -5,11 +5,11 @@ import numpy as np
 
 
 class AdamImport:
-    def convert(self, filename):
+    def DBFConverter(self, ifile, ofile, conv_type):
         #create the DBF reader object
-        db = dbf.Dbf(filename)
+        db = dbf.Dbf(ifile)
         #create the file to output CSV data to
-        fpath = 'output.csv'
+        fpath = ofile
         f = open(fpath,'w')
         #initiat the header container and CSV writer
         hdr = []
@@ -27,13 +27,13 @@ class AdamImport:
             #using asList makes a list as opposed to asDict
             c.writerow(rec.asList())
 
-        #take the csv file and open it as a pandas dataframe
-        from_csv = pd.read_csv(fpath)
-
+        if conv_type in ['pandas']:
+            #take the csv file and open it as a pandas dataframe
+            from_csv = pd.read_csv(fpath)
+            #return a dataframe object
+            return from_csv
         #close the CSV file
         f.close()
-        #return a dataframe object
-        return from_csv
 
 
 

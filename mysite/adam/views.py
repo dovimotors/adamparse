@@ -18,7 +18,7 @@ def detail(request, path_id):
     p = ADAMFiles.objects.get(id=path_id)
     p = str(p)
     #conver the DBF to a dataframe
-    datafr = ai.convert(p)
+    datafr = ai.DBFConverter(p,'output.csv','pandas')
 
     #*******************
     # modify the dataframe here before converting to HTML
