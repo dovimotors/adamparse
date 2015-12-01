@@ -34,6 +34,29 @@ class AdamImport:
             return from_csv
         #close the CSV file
         f.close()
+        db.close()
 
+    def GetColNames(self, ifile):
+        db = dbf.Dbf(ifile)
+        #initiat the header container and CSV writer
+        hdr = []
 
+        #loop through all the field names and create the header row
+        for fieldName in db.fieldNames:
+            hdr += [fieldName]
+        db.close()
+        return hdr
 
+    def GetColNamesAndTypes(self,ifile):
+        db = dbf.Dbf(ifile)
+        dict = {}
+        df = db.fieldDefs
+        for rec in db[0:1]:
+            for fldName in db.fieldNames:
+                dict[fldName] = type(rec[fldName]).__name__
+
+        #print db.__repr__
+        #print dict
+        #print df
+        return dict
+        db.close()
