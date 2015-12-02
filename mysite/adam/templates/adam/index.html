@@ -1,10 +1,15 @@
 {% if path_list %}
     <ul>
-        {% for DBFPath in path_list %}
+        {% for obj in path_list %}
         <li>
-            <a href="/adam/{{ id }}/">
-                {{ DBFPath }}
+            <a href="/adam/{{ obj.id }}/">
+                Preview Data
             </a>
+             |
+            <a href="/adam/export/{{ obj.id }}/">
+                Export
+            </a>
+             | {{ obj.DBFPath }}
         </li>
         {% endfor %}
     </ul>

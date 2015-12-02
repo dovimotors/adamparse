@@ -29,6 +29,8 @@ Include/
 *.cdx
 *.ftp
 .idea/
+db.sqlite3
+output.csv
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
