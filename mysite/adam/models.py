@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class ADAMFiles(models.Model):
@@ -8,7 +9,7 @@ class ADAMFiles(models.Model):
 
 
     DBFPath = models.FilePathField(
-        path='c:\winADAM\\',
+        path=settings.ADAM_PATH,
         recursive=True,
     )
 

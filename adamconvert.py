@@ -2,7 +2,7 @@ from dbftopandas import AdamImport
 
 ai = AdamImport()
 
-i = 'c:\winADAM\Sicar\Data\\rofile.dbf'
+i = 'f:\\adamexports\\adamcache\Apcar\Data\\aparcinv.dbf'
 #o = 'c:\\apps\output.csv'
 #t = 'csv'
 
@@ -14,13 +14,19 @@ i = 'c:\winADAM\Sicar\Data\\rofile.dbf'
 
 #print pd.head()
 
-#headers = ai.GetColNames(i)
+headers = ai.GetColNames(i)
 
-#print headers
+print headers
 
-data_types = ai.GetColNamesAndTypes(i)
+i = 'f:\\adamexports\\adamcache\Apcar\Data\\apinv.dbf'
 
-for d in data_types:
-    if data_types[d] == 'NoneType':
-        print d, data_types[d]
+headers = ai.GetColNames(i)
+
+print headers
+
+#data_types = ai.GetColNamesAndTypes(i)
+
+#for d in data_types:
+#    if data_types[d] == 'NoneType':
+#        print d, data_types[d]
 

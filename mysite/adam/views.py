@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, StreamingHttpResponse
 from dbftopandas import AdamImport
 from .models import ADAMFiles
+import os
 
 
 def index(request):
@@ -43,7 +44,18 @@ def export(request, path_id):
     p = str(p)
     ai.DBFConverter(p,'output.csv','csv')
     f = open('output.csv')
+    ofile = os.path.basename(p)
+    ofile = ofile.replace('.dbf','')
+    ofile = ofile.replace('.DBF','')
     response = HttpResponse(f, content_type="text/csv")
-    response['Content-Disposition'] = 'attachment; filename="export.csv"'
+    params = 'attachment; filename=%s.csv' % ofile
+    response['Content-Disposition'] = params
     f.close()
     return response
+
+def test(request, path_id):
+    p = ADAMFiles.objects.get(id=path_id)
+    p = str(p)
+    fp = os.path.basename(p)
+    fp = fp.replace('.dbf','')
+    return HttpResponse(fp)

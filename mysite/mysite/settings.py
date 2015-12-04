@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADAM_PATH = 'f:\\adamexports\\adamcache\\'
+
 
 # Application definition
 
@@ -37,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'adam'
+    'adam',
+    'dashboard'
 )
 
 MIDDLEWARE_CLASSES = (
