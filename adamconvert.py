@@ -2,11 +2,11 @@ from dbftopandas import AdamImport
 
 ai = AdamImport()
 
-i = 'f:\\adamexports\\adamcache\Apcar\Data\\aparcinv.dbf'
-#o = 'c:\\apps\output.csv'
-#t = 'csv'
+i = 'f:\\adamexports\\adamcache\Sicar\Data\\rofile.dbf'
+o = 'f:\\adamexports\csvfiles\\rofile.csv'
+t = 'csv'
 
-#ai.DBFConverter(i,o,t)
+ai.DBFConverter(i,o,t)
 
 #t = 'pandas'
 
@@ -14,15 +14,15 @@ i = 'f:\\adamexports\\adamcache\Apcar\Data\\aparcinv.dbf'
 
 #print pd.head()
 
-headers = ai.GetColNames(i)
+#headers = ai.GetColNames(i)
 
-print headers
+#print headers
 
-i = 'f:\\adamexports\\adamcache\Apcar\Data\\apinv.dbf'
+#i = 'f:\\adamexports\\adamcache\Apcar\Data\\apinv.dbf'
 
-headers = ai.GetColNames(i)
+#headers = ai.GetColNames(i)
 
-print headers
+#print headers
 
 #data_types = ai.GetColNamesAndTypes(i)
 
