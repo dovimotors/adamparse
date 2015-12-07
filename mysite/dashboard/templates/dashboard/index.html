@@ -20,7 +20,7 @@
         data.addColumn('string', 'StatDate');
         data.addColumn('number', 'InvValue');
         data.addRows([
-        {% for value in value_list %}
+        {% for value in parts_list %}
         ['{{value.statdate | date:"SHORT_DATE_FORMAT"}}',{{value.invvalue}}],
         {% endfor %}
         ]);
